@@ -90,7 +90,7 @@ export default function CreateRecipePage({ history, userId, savedRecipes }) {
     } else {
       content = slicedArray.map((recipe, index) => {
         return (
-          <Grid key={index} item xs={12} sm={12} md={6}>
+          <Grid key={index} item xs={12} sm={4} md={4}>
             <SmallRecipeCard
               removeHandler={removeFromHistory}
               key={index}

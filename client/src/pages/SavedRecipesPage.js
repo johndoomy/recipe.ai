@@ -41,14 +41,14 @@ export default function SavedRecipesPage({ recipes }) {
     const reversedRecipes = [...data.recipes].reverse();
     if (reversedRecipes.length === 0) {
       content = (
-        <Grid item xs={12} sm={6} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <NoRecipeCard />
         </Grid>
       );
     } else {
       content = reversedRecipes.map((recipe, index) => {
         return (
-          <Grid key={index} item xs={12} sm={6} md={6}>
+          <Grid key={index} item xs={12} sm={4} md={4}>
             <SmallRecipeCard
               favorited
               removeHandler={removeFavoritRecipe}
