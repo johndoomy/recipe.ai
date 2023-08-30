@@ -41,7 +41,7 @@ export default function SavedRecipesPage({ recipes }) {
     const reversedRecipes = [...data.recipes].reverse();
     if (reversedRecipes.length === 0) {
       content = (
-        <Grid item xs={12} sm={4} md={4}>
+        <Grid item xs={12} sm={6} md={3}>
           <NoRecipeCard />
         </Grid>
       );
