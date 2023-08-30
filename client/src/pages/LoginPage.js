@@ -18,7 +18,7 @@ export default function LoginPage() {
 
   useValidateUserQuery();
 
-  const host = window.location.host;
+  const host = window.location.origin;
 
   const handleLogin = async (event) => {
     event.preventDefault();

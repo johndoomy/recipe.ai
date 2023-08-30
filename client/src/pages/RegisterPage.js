@@ -18,7 +18,7 @@ export default function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const host = window.location.host;
+  const host = window.location.origin;
 
   const registerUser = async (event) => {
     event.preventDefault();
