@@ -55,7 +55,6 @@ export default function CustomAppBar({ loading, authenticated, name }) {
   const handleLogout = () => {
     localStorage.removeItem('token');
     dispatch(userApi.util.invalidateTags(['User']));
-    console.log('logging out');
   };
 
   let userIcon;

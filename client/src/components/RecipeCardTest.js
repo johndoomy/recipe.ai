@@ -1,30 +1,30 @@
-import { useState } from "react";
-import { useAddFavoriteRecipeMutation } from "../store";
-import { useRemoveFavoriteRecipeMutation } from "../store";
-import { styled } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Grow from "@mui/material/Grow";
-import Grid from "@mui/material/Grid";
-import Checkbox from "@mui/material/Checkbox";
+import { useState } from 'react';
+import { useAddFavoriteRecipeMutation } from '../store';
+import { useRemoveFavoriteRecipeMutation } from '../store';
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Grow from '@mui/material/Grow';
+import Grid from '@mui/material/Grid';
+import Checkbox from '@mui/material/Checkbox';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
     duration: theme.transitions.duration.shortest,
   }),
 }));
@@ -44,8 +44,7 @@ export default function RecipeCardTest({ recipe, multiple, ...rest }) {
 
   const [favoriteRecipe] = useAddFavoriteRecipeMutation();
 
-  const [removeFavoritRecipe, results] = useRemoveFavoriteRecipeMutation();
-  console.log(results);
+  const [removeFavoritRecipe] = useRemoveFavoriteRecipeMutation();
 
   const handleRemoveClick = () => {
     handleMenuClose();
@@ -60,13 +59,13 @@ export default function RecipeCardTest({ recipe, multiple, ...rest }) {
     favoriteRecipe(recipe._id);
   };
 
-  const tagsString = recipe.tags.join(" ");
+  const tagsString = recipe.tags.join(' ');
 
   return (
     <>
       <Grow
         in={true}
-        style={{ transformOrigin: "0 0 0" }}
+        style={{ transformOrigin: '0 0 0' }}
         {...{ timeout: multiple * 400 || 400 }}
         {...rest}
       >
@@ -75,9 +74,9 @@ export default function RecipeCardTest({ recipe, multiple, ...rest }) {
             action={
               <IconButton
                 aria-label="settings"
-                aria-controls={anchorEl ? "basic-menu" : undefined}
+                aria-controls={anchorEl ? 'basic-menu' : undefined}
                 aria-haspopup="true"
-                aria-expanded={anchorEl ? "true" : undefined}
+                aria-expanded={anchorEl ? 'true' : undefined}
                 onClick={handleKebabClick}
               >
                 <MoreVertIcon />
@@ -92,8 +91,8 @@ export default function RecipeCardTest({ recipe, multiple, ...rest }) {
                 <>
                   <Grid
                     container
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
+                    justifyContent={'space-between'}
+                    alignItems={'center'}
                   >
                     <Grid item>
                       <Typography

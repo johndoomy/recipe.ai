@@ -66,7 +66,6 @@ export default function CreateRecipePage({ history, userId, savedRecipes }) {
     if (input === '') {
       return;
     }
-    console.log(input);
     generateRecipe({ input: input, tags: restrictions, userId: userId });
     setSelectedRecipe(null);
   };

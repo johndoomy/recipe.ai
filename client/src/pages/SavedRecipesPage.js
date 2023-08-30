@@ -18,7 +18,6 @@ export default function SavedRecipesPage({ recipes }) {
   const [removeFavoritRecipe] = useRemoveFavoriteRecipeMutation();
 
   const handleSelectionClick = (index) => {
-    console.log('click', index);
     setSelectedRecipe(index);
   };
 

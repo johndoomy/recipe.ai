@@ -46,8 +46,7 @@ export default function RecipeCard({
 
   const [removeFromHistory] = useRemoveFromHistoryMutation();
 
-  const [removeFavoritRecipe, results] = useRemoveFavoriteRecipeMutation();
-  console.log(results);
+  const [removeFavoritRecipe] = useRemoveFavoriteRecipeMutation();
 
   const handleRemoveClick = () => {
     // handleMenuClose();

@@ -37,9 +37,8 @@ export default function SmallRecipeCard({
 
   const handleRemoveClick = () => {
     if (featured) {
-      console.log('refreshing recipe');
     }
-    console.log('removing');
+
     removeHandler(recipe._id);
   };
 

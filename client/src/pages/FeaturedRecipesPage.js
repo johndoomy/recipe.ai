@@ -14,7 +14,6 @@ export default function FeaturedRecipesPage() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const handleSelectionClick = (index) => {
-    console.log('click', index);
     setSelectedRecipe(index);
   };
 
