@@ -83,14 +83,14 @@ export default function CreateRecipePage({ history, userId, savedRecipes }) {
     const slicedArray = reversedArray.slice(0, 10);
     if (slicedArray.length === 0) {
       content = (
-        <Grid item xs={12} sm={6} md={6}>
+        <Grid item xs={12} sm={4} md={4}>
           <NoRecipeCard />
         </Grid>
       );
     } else {
       content = slicedArray.map((recipe, index) => {
         return (
-          <Grid key={index} item xs={12} sm={4} md={4}>
+          <Grid key={index} item xs={12} sm={12} md={6}>
             <SmallRecipeCard
               removeHandler={removeFromHistory}
               key={index}
