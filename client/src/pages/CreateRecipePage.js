@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   useAddRecipeToHistoryMutation,
   useFetchUserRecipesQuery,
@@ -23,6 +24,14 @@ export default function CreateRecipePage({ history, userId, savedRecipes }) {
   const [input, setInput] = useState('');
   const [restrictions, setRestrictions] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userId === undefined) {
+      navigate('/login');
+    }
+  }, [userId, navigate]);
 
   const clearSelectedRecipe = () => {
     setSelectedRecipe(null);

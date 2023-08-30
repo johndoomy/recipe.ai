@@ -1,4 +1,3 @@
-// import "./index.css";
 import { Routes, Route } from 'react-router-dom';
 // import CssBaseline from "@mui/material/CssBaseline";
 import { useValidateUserQuery } from './store';
