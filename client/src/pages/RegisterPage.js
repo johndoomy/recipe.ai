@@ -18,9 +18,11 @@ export default function RegisterPage() {
 
   const navigate = useNavigate();
 
+  const hostName = window.location.hostname;
+
   const registerUser = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost:3001/user/register', {
+    const response = await fetch(`http://${hostName}:3001/user/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

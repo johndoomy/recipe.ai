@@ -1,29 +1,31 @@
-import { useState } from "react";
-import { useValidateUserQuery } from "../store";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import { Link } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import { useState } from 'react';
+import { useValidateUserQuery } from '../store';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useValidateUserQuery();
 
+  const hostName = window.location.hostname;
+
   const handleLogin = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3001/user/login", {
-      method: "POST",
+    const response = await fetch(`http://${hostName}:3001/user/login`, {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
@@ -35,10 +37,10 @@ export default function LoginPage() {
     console.log(data);
 
     if (data.user) {
-      localStorage.setItem("token", data.user);
-      window.location.href = "/";
+      localStorage.setItem('token', data.user);
+      window.location.href = '/';
     } else {
-      alert("please check username and password");
+      alert('please check username and password');
     }
   };
 
@@ -47,12 +49,12 @@ export default function LoginPage() {
       <Box
         sx={{
           marginTop: 10,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">

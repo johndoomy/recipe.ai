@@ -12,6 +12,7 @@ import AboutPage from './pages/AboutPage';
 import Box from '@mui/material/Box';
 
 function App() {
+  console.log(window.location);
   const { data, isLoading } = useValidateUserQuery();
 
   return (
