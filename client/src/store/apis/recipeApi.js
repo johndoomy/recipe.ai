@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 
-const hostName = window.location.hostname;
+const host = window.location.host;
 
 const recipeApi = createApi({
   reducerPath: 'recipe',
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://${hostName}:3001/recipe`,
+    baseUrl: `${host}/api/recipe`,
   }),
   endpoints(builder) {
     return {

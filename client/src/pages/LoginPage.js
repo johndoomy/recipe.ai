@@ -18,11 +18,11 @@ export default function LoginPage() {
 
   useValidateUserQuery();
 
-  const hostName = window.location.hostname;
+  const host = window.location.host;
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const response = await fetch(`http://${hostName}:3001/user/login`, {
+    const response = await fetch(`${host}/api/user/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
