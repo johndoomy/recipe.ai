@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import image from '../images/robot-chef.jpg';
 
 export default function NoRecipeCard() {
-  console.log(image);
   return (
     <Card>
       <CardMedia
