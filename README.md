@@ -1,6 +1,7 @@
 # Recipe.AI
 
 Generate any recipe by integrating chatGPT
+[Recipe.AI](http://recipe-ai.net/)
 
 ## Description
 
